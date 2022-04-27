@@ -6,11 +6,8 @@
 #include <string.h>
 #include <stdint.h>
 
-#if __APPLE__ && __MACH__
-	#include <sys/ucontext.h>
-#else 
-	#include <ucontext.h>
-#endif 
+#define _XOPEN_SOURCE
+#include <ucontext.h>
 
 #define STACK_SIZE (1024*1024)
 #define DEFAULT_COROUTINE 16
